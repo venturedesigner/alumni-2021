@@ -1,6 +1,5 @@
 const mongoose = require('mongoose')
 const { profileSchema } = require('./profile.schema')
-const { creatorSchema } = require('./creator.schema')
 
 const userSchema = new mongoose.Schema({
   username: {
@@ -28,24 +27,12 @@ const userSchema = new mongoose.Schema({
     type: Date,
     required: [true, 'Date of birth is required']
   },
-  typeofuser: {
-    type: String,
-    enum: ['Moderator', 'Creator', 'User', 'Admin'],
-    default: 'User'
-  },
-  channelsfollowed: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'channel'
-  }],
-  postsliked: Array,
-  mychannels: [{
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'channel',
-    default: []
-  }],
-  creatorinfo: creatorSchema,
+  // typeofuser: {
+  //   type: String,
+  //   enum: ['Moderator', 'Creator', 'User', 'Admin'],
+  //   default: 'User'
+  // },
   profile: profileSchema,
-  indentification: String,
   verified: Boolean,
   
 })

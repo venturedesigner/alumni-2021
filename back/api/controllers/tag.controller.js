@@ -1,5 +1,4 @@
 const { tagModel } = require('../models/tag.model')
-const { channelModel } = require('../models/channel.model')
 
 exports.getTags = (req, res) => {
   tagModel
