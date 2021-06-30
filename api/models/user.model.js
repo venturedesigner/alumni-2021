@@ -4,7 +4,6 @@ const { profileSchema } = require('./profile.schema')
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    required: [true, 'UserName is required'],
     unique: [true, 'This UserName is already taken, try anothe one']
   },
   password: {
@@ -25,7 +24,6 @@ const userSchema = new mongoose.Schema({
   },
   dateofbirth: {
     type: Date,
-    required: [true, 'Date of birth is required']
   },
   // typeofuser: {
   //   type: String,
