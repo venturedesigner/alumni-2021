@@ -3,14 +3,14 @@ process.stdout.write('\x1Bc')
 require('dotenv').config()
 const express = require('express')
 const mongoose = require('mongoose')
-// const cors = require('cors')
+const cors = require('cors')
 const morgan = require('morgan')
 
 const { router } = require('./api/routes')
 const api = express()
 
 api
-  // .use(cors())
+  .use(cors())
   .use(morgan('dev'))
   .use(express.json())
   .use('/api', router)
