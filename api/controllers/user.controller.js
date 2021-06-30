@@ -1,5 +1,15 @@
 const { userModel } = require('../models/user.model')
 
+exports.getUsers = (req, res) => {
+  userModel
+    .find()
+    .then(user => {
+      res.status(200).json(user)
+    })
+    .catch(err => console.error('Error getting profile', err))
+}
+
+
 exports.getProfile = (req, res) => {
   userModel
     .findById(req.params.userId)
