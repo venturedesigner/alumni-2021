@@ -12,7 +12,7 @@ const userSchema = new mongoose.Schema({
     required: [true, 'Password is required']
   },
   name: {
-    type: String,
+    type: String, 
     required: [true, 'Name is required']
   },
   email: {
