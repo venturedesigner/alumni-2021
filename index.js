@@ -17,7 +17,7 @@ api
   .listen(process.env.PORT || 3000, err => {
     if (err) { throw new Error(err) }
 
-    mongoose.connect(process.env.MONGO_URL,
+    mongoose.connect(mongodb+srv://rebook:LnsyKsSU8GHmarMv@rebook.gnrot.mongodb.net/myFirstDatabase?retryWrites=true&w=majority,
       {
         dbName: process.env.MONGO_DB || 'sexed',
         useNewUrlParser: true,
