@@ -43,16 +43,14 @@ exports.signUp = (req, res) => {
       username: req.body.username,
       password: hashedPwd,
       email: req.body.email,
-      dateofbirth: req.body.dateofbirth,
-      typeofuser: req.body.typeofuser
+      dateofbirth: req.body.dateofbirth
     })
     .then(user => {
       const userData = { 
         name: user.name, 
         username: req.body.username, 
         id: user._id, 
-        email: user.email,
-        typeofuser: req.body.typeofuser
+        email: user.email
       }
       const token = jwt.sign(
         userData,
@@ -64,7 +62,7 @@ exports.signUp = (req, res) => {
     })
     .catch(err => {
       console.log(err)
-      res.status(400).json({ error: 'Error' })
+      res.status(400).json({ error: 'Error jj' })
     })
 }
 

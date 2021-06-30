@@ -21,7 +21,7 @@ const userSchema = new mongoose.Schema({
       /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
       "This email doesn't follow the requirements"
     ]
-  },
+  }, 
   dateofbirth: {
     type: Date,
   },
