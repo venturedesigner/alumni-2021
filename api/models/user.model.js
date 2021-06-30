@@ -4,7 +4,6 @@ const { profileSchema } = require('./profile.schema')
 const userSchema = new mongoose.Schema({
   username: {
     type: String,
-    unique: [true, 'This UserName is already taken, try anothe one']
   },
   password: {
     type: String,
